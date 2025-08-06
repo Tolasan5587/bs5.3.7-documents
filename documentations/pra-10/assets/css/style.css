@@ -1,0 +1,37 @@
+body {
+    background-color: #ddd;
+}
+
+.navbar .navbar-brand img {
+    width: 50px;
+    height: 50PX;
+}
+.navbar .navbar-brand span {
+    font-weight: 500;
+    color: #757575;
+}
+.navbar .navbar-nav .nav-item .nav-link {
+    font-weight: 600;
+    font-size: 16px;
+    padding-inline: 20px;
+}
+
+.navbar .navbar-nav .nav-item .drop-down .dropdown-item {
+    font-weight: 600px;
+    font-size: 16px;
+}
+
+.navbar .navbar-nav .nav-item .fa-solid,
+.navbar .navbar-nav .nav-item .fa-brands {
+    padding-right: 14px;
+}
+
+.nav-user .fa-solid {
+    padding-inline: 10px;
+    color: #4f4f4f;
+    font-size: 20px;
+}
+
+.dropdown:hover > .dropdown-menu, .dropend:hover > .dropdown-item {
+    display: block;
+}
