@@ -1,0 +1,31 @@
+body {
+  background-color: #f8fafc;
+  color: #242223;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  color: #ffff;
+}
+main {
+  background-color: #ebebebdd !important;
+  height: 100vh;
+}
+
+.top-bar {
+  background-color: #ebebebdd;
+  width: 100%;
+}
+
+.profile-brand .nav-link {
+  color: #242223 !important;
+}
+
+.hero-banner {
+  width: 500px;
+  height: 500px;
+
+  background-color: #f8fafc;
+}
+.hero-banner img {
+  width: 400px;
+}
