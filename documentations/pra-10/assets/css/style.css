@@ -18,9 +18,9 @@ body.dark-mode {
   --nav-link-hover-color: #bbbbbb;
   --icon-color: #ffffff;
   --offcanvas-bg: #1e1e1e;
+  --bg-border: #121212;
 }
 
-/* Apply variables */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -53,17 +53,6 @@ body {
   color: var(--nav-link-hover-color) !important;
 }
 
-/* Dropdown items */
-.navbar .navbar-nav .nav-item .dropdown .dropdown-item {
-  font-weight: 600;
-  font-size: 16px;
-  color: var(--nav-link-color) !important;
-}
-
-.navbar .navbar-nav .nav-item .dropdown .dropdown-item:hover {
-  color: var(--nav-link-hover-color) !important;
-}
-
 /* Icons in nav items */
 .navbar .navbar-nav .nav-item .fa-solid,
 .navbar .navbar-nav .nav-item .fa-brands {
@@ -76,13 +65,43 @@ body {
   padding-inline: 10px;
   color: var(--icon-color);
   font-size: 20px;
+}  
+
+/* Dropdown items */
+.navbar .navbar-nav .nav-item .dropdown .dropdown-item {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--nav-link-color) !important;
 }
+
+.navbar .navbar-nav .nav-item .dropdown .dropdown-item:hover {
+  color: var(--nav-link-hover-color) !important;
+}
+
 
 /* Dropdown menus show on hover */
 .dropdown:hover > .dropdown-menu,
 .dropend:hover > .dropdown-menu {
   display: block;
+  
 }
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-submenu > .dropdown-toggle::after {
+  float: right;
+  margin-top: 6px;
+}
+
 
 /* User icon image */
 .icon-image {
@@ -107,4 +126,11 @@ body {
 /* Icons in dark mode */
 i {
   color: var(--icon-color) !important;
+}
+
+@media (max-width: 600px) {
+  .navbar .navbar-brand img {
+  width: 30px;
+  height: 30px;
+  margin-left: -10px;
 }

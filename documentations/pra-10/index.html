@@ -26,7 +26,7 @@
           <!-- Dark mode toggle for mobile inside offcanvas -->
           <div class="ms-4">
             <!-- Mobile: toggle icon -->
-            <a href="#" class="d-block d-lg-none mt-3" id="toggleDarkMobile">
+            <a href="#" class="d-block d-lg-none" id="toggleDarkMobile">
               <i class="fas fa-sun"></i>
             </a>
           </div>
@@ -38,7 +38,8 @@
             data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar"
           >
-            <span class="navbar-toggler-icon"></span>
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i class="fa-solid fa-bars"></i>
           </button>
 
           <!-- Desktop nav, hidden on small screens -->
@@ -49,6 +50,7 @@
                   <i class="fa-solid fa-house"></i> Home
                 </a>
               </li>
+
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -60,18 +62,23 @@
                   <i class="fa-brands fa-app-store"></i> App
                 </a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item dropend">
+                  <li class="dropdown-submenu dropend">
                     <a
                       class="dropdown-item dropdown-toggle"
+                      href="#"
                       role="button"
                       data-bs-toggle="dropdown"
-                      href="#"
+                      aria-expanded="false"
                     >
                       Ecommerce
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Admin</a></li>
-                      <li><a class="dropdown-item" href="#">Admin</a></li>
+                      <li><a class="dropdown-item" href="#">CRM</a></li>
+                      <li>
+                        <a class="dropdown-item" href="#">Project Management</a>
+                      </li>
+                      <li><a class="dropdown-item" href="#">Chat</a></li>
+                      <li><a class="dropdown-item" href="#">Email</a></li>
                     </ul>
                   </li>
                   <li><a class="dropdown-item" href="#">CRM</a></li>
@@ -82,6 +89,7 @@
                   <li><a class="dropdown-item" href="#">Email</a></li>
                 </ul>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="#"
                   ><i class="fa-solid fa-pager"></i> Pages</a
@@ -159,10 +167,6 @@
                   >
                     Ecommerce
                   </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Admin</a></li>
-                    <li><a class="dropdown-item" href="#">Admin</a></li>
-                  </ul>
                 </li>
                 <li><a class="dropdown-item" href="#">CRM</a></li>
                 <li>
