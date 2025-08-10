@@ -1,233 +1,368 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>practiesc-11</title>
-    <!-- link framework bootstrap 5.3.7 -->
+
+    <!-- Bootstrap 5.3.7 -->
     <link rel="stylesheet" href="assets/css/bootstrap.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
 
-    <!-- link cdn bootstrap icon -->
+    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <!-- link cdn's main of font name Poppins-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts - Poppins -->
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- favicon logo website -->
-    <link rel="icon" type="image/tola" href="assets/img/letter-t.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/letter-t.png" />
   </head>
   <body>
     <header>
-      <div class="top-bar py-2">
-        <div class="container-fluid container-xl">
-          <div class="row align-items-center">
-            <div class="col-lg-4 d-none d-lg-flex">
-              <div class="top-bar-item">
-                <i class="bi bi-telephone-fill me-2"></i>
-                <span>Need help? Call us: </span>
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
-              </div>
+      <!-- Top Bar -->
+      <div class="top-bar py-2 border-bottom">
+        <div class="container-xl">
+          <div class="row align-items-center text-center text-lg-start">
+            <!-- Contact (Desktop) -->
+            <div class="col-lg-4 d-none d-lg-flex align-items-center">
+              <i class="bi bi-telephone-fill me-2"></i>
+              <span>Need help? Call us: </span>
+              <a href="tel:+1234567890" class="ms-1">+1 (234) 567-890</a>
             </div>
 
-            <div class="col-lg-4 col-md-12 text-center">
-              <div class="announcement-slider">
-                <div class="anoun-content">
-                  <div class="anoun-description">
-                    🎁 20% off on your first order
-                  </div>
-                </div>
-              </div>
+            <!-- Contact (Mobile) -->
+            <div class="col-12 d-flex d-lg-none justify-content-center mb-2">
+              <a href="tel:+1234567890" class="text-decoration-none">
+                <i class="bi bi-telephone-fill me-1"></i> Call: +1 (234) 567-890
+              </a>
             </div>
 
-            <div class="col-lg-4 d-none d-lg-block">
-              <div class="d-flex justify-content-end">
-                <div class="top-bar-item dropdown me-3">
-                  <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                    <i class="bi bi-translate me-2 fs-6"></i>EN
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#"
-                        ><i class="bi bi-check2 me-2 selected-icon"></i
-                        >English</a
-                      >
-                    </li>
-                    <li><a class="dropdown-item" href="#">Español</a></li>
-                    <li><a class="dropdown-item" href="#">Français</a></li>
-                    <li><a class="dropdown-item" href="#">Deutsch</a></li>
-                  </ul>
-                </div>
-                <div class="top-bar-item dropdown">
-                  <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                    <i class="bi bi-currency-dollar me-2 fs-6"></i>USD
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#"
-                        ><i class="bi bi-check2 me-2 selected-icon"></i>USD</a
-                      >
-                    </li>
-                    <li><a class="dropdown-item" href="#">EUR</a></li>
-                    <li><a class="dropdown-item" href="#">GBP</a></li>
-                  </ul>
-                </div>
+            <!-- Announcement -->
+            <div class="col-lg-4 col-md-12">🎁 20% off on your first order</div>
+
+            <!-- Language & Currency -->
+            <div class="col-lg-4 d-none d-lg-flex justify-content-end">
+              <div class="dropdown me-3">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="bi bi-translate me-2"></i>EN
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">English</a></li>
+                  <li><a class="dropdown-item" href="#">Español</a></li>
+                  <li><a class="dropdown-item" href="#">Français</a></li>
+                  <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="bi bi-currency-dollar me-2"></i>USD
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">USD</a></li>
+                  <li><a class="dropdown-item" href="#">EUR</a></li>
+                  <li><a class="dropdown-item" href="#">GBP</a></li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <!-- Main Header -->
-      <div class="main-header">
-        <div class="container container-xl">
-          <div class="d-flex py-3 align-items-center justify-content-between">
-            <!-- Logo -->
-            <a class="logo d-flex align-items-center" href="/">
-              <h1 class="sitename">NiceShop</h1>
-            </a>
+      <div class="main-header border-bottom">
+        <div class="container-xl">
+          <div
+            class="d-flex py-3 align-items-center justify-content-between flex-wrap"
+          >
+            <!-- Logo + Toggler -->
+            <div class="d-flex align-items-center">
+              <!-- Toggler button moved here -->
+
+              <!-- Logo -->
+              <a
+                class="logo d-flex align-items-center text-decoration-none"
+                href="/"
+              >
+                <h1 class="sitename m-0">NiceShop</h1>
+              </a>
+            </div>
 
             <!-- Search -->
-            <form class="search-form">
+            <form class="search-form my-2 my-lg-0">
               <div class="input-group">
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Search for products"
                 />
-                <button class="btn" type="submit">
+                <button class="btn btn-primary" type="submit">
                   <i class="bi bi-search"></i>
                 </button>
               </div>
             </form>
 
             <!-- Actions -->
-            <div
-              class="header-actions d-flex align-items-center justify-content-end"
-            >
-              <!-- Mobile Search Toggle -->
-              <button
-                class="header-action-btn mobile-search-toggle d-xl-none text-black"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mobileSearch"
-                aria-expanded="false"
-                aria-controls="mobileSearch"
-              >
-                <i class="bi bi-search"></i>
-              </button>
-
+            <div class="header-actions d-flex align-items-center">
               <!-- Account -->
-              <div class="dropdown account-dropdown">
-                <button class="header-action-btn" data-bs-toggle="dropdown">
+              <div class="dropdown me-2">
+                <button class="btn" data-bs-toggle="dropdown">
                   <i class="bi bi-person"></i>
                 </button>
-                <div class="dropdown-menu">
-                  <div class="dropdown-header">
-                    <h6>
-                      Welcome to <span class="sitename">FashionStore</span>
-                    </h6>
-                    <p class="mb-0">Access account &amp; manage orders</p>
+                <div class="dropdown-menu dropdown-menu-end p-2">
+                  <div class="mb-2">
+                    <h6>Welcome to <span class="sitename">NiceShop</span></h6>
+                    <p class="mb-0 small">Access account &amp; manage orders</p>
                   </div>
-                  <div class="dropdown-body">
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                      <i class="bi bi-person me-2"></i>
-                      <span>My Profile</span>
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                      <i class="bi bi-bag-check me-2"></i>
-                      <span>My Orders</span>
-                    </a>
-                    <a
-                      class="dropdown-item d-flex align-items-center"
-                      href="account.html"
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-person me-2"></i>My Profile</a
+                  >
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-bag-check me-2"></i>My Orders</a
+                  >
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-heart me-2"></i>My Wishlist</a
+                  >
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-gear me-2"></i>Settings</a
+                  >
+                  <div class="mt-2">
+                    <a href="#" class="btn btn-primary w-100 mb-1">Sign In</a>
+                    <a href="#" class="btn btn-outline-primary w-100"
+                      >Register</a
                     >
-                      <i class="bi bi-heart me-2"></i>
-                      <span>My Wishlist</span>
-                    </a>
-                    <a
-                      class="dropdown-item d-flex align-items-center"
-                      href="account.html"
-                    >
-                      <i class="bi bi-gear me-2"></i>
-                      <span>Settings</span>
-                    </a>
-                  </div>
-                  <div class="dropdown-footer">
-                    <a href="#" class="btn btn-primary w-100 mb-2">Sign In</a>
-                    <a href="#" class="btn btn-primary w-100">Register</a>
                   </div>
                 </div>
               </div>
 
               <!-- Wishlist -->
-              <a href="#" class="header-action-btn d-none d-md-block">
+              <a href="#" class="me-2 position-relative">
                 <i class="bi bi-heart"></i>
-                <span class="badge">0</span>
+                <span
+                  class="badge bg-dark position-absolute top-0 start-100 translate-middle"
+                  >0</span
+                >
               </a>
 
               <!-- Cart -->
-              <a href="#" class="header-action-btn">
+              <a href="#" class=" position-relative">
                 <i class="bi bi-cart3"></i>
-                <span class="badge">3</span>
+                <span
+                  class="badge bg-dark position-absolute top-0 start-100 translate-middle"
+                  >3</span
+                >
               </a>
-
-              <!-- Mobile Navigation Toggle -->
-              <i class="mobile-nav-toggle text-black d-xl-none bi bi-list me-0">
-              </i>
+              <button
+                class="navbar-toggler d-xl-none ms-3"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+              >
+                <span class="navbar-toggler-icon"
+                  ><i class="bi bi-list"></i
+                ></span>
+              </button>
             </div>
           </div>
         </div>
       </div>
+
       <!-- Navigation -->
-      <div class="header-nav">
-        <div class="container">
-          <nav class="navbar">
-            <ul>
-              <li><a class="active" href="/">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="category.html">Category</a></li>
-              <li><a href="product-details.html">Product Details</a></li>
-              <li><a href="cart.html">Cart</a></li>
-              <li><a href="checkout.html">Checkout</a></li>
-              <li class="dropdown">
-                <a href="#"
-                  ><span>Dropdown</span>
-                  <i class="bi bi-chevron-down toggle-dropdown"></i
-                ></a>
-                <ul>
-                  <li><a href="#">Dropdown 1</a></li>
-                  <li class="dropdown">
-                    <a href="#"
-                      ><span>Deep Dropdown</span>
-                      <i class="bi bi-chevron-down toggle-dropdown"></i
-                    ></a>
-                    <ul>
-                      <li><a href="#">Deep Dropdown 1</a></li>
-                      <li><a href="#">Deep Dropdown 2</a></li>
-                      <li><a href="#">Deep Dropdown 3</a></li>
-                      <li><a href="#">Deep Dropdown 4</a></li>
-                      <li><a href="#">Deep Dropdown 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Dropdown 2</a></li>
-                  <li><a href="#">Dropdown 3</a></li>
-                  <li><a href="#">Dropdown 4</a></li>
-                </ul>
+      <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+        <div class="container-xl">
+          <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="/">Home</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Category</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Product Details</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Checkout</a>
               </li>
 
-              <li class="ms-auto"><a href="#">Contact</a></li>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >Dropdown</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Dropdown 1</a></li>
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#"
+                      >Deep Dropdown</a
+                    >
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">Deep Dropdown 1</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Deep Dropdown 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Dropdown 2</a></li>
+                  <li><a class="dropdown-item" href="#">Dropdown 3</a></li>
+                </ul>
+              </li>
             </ul>
-          </nav>
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </nav>
     </header>
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero section py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <div class="hero-content">
+                <div
+                  class="content-wrapper"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <h1 class="hero-title">Discover Amazing Products</h1>
+                  <p class="hero-description">
+                    Explore our curated collection of premium items designed to
+                    enhance your lifestyle. From fashion to tech, find
+                    everything you need with exclusive deals and fast shipping.
+                  </p>
+                  <div
+                    class="hero-actions"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <a href="#" class="btn">Shop Now</a>
+                    <a href="#" class="btn btn-secondary">Browse Categories</a>
+                  </div>
+                  <div
+                    class="features-list d-flex gap-5"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <div class="feature-item">
+                      <i class="bi bi-truck"></i>
+                      <span>Free Shipping</span>
+                    </div>
+                    <div class="feature-item">
+                      <i class="bi bi-award"></i>
+                      <span>Quality Guarantee</span>
+                    </div>
+                    <div class="feature-item">
+                      <i class="bi bi-headset"></i>
+                      <span>24/7 Support</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="hero-visuals">
+                <div
+                  class="product-showcase border rounded-5 mx-auto"
+                  data-aos="fade-left"
+                  data-aos-delay="200"
+                >
+                  <div class="product-card featured">
+                    <img
+                      src="assets/img/product-2.webp"
+                      alt="Featured Product"
+                      class="img-fluid"
+                    />
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-info">
+                      <h4>Premium Wireless Headphones</h4>
+                      <div class="price">
+                        <span class="sale-price">$299</span>
+                        <span class="original-price">$399</span>
+                      </div>
+                    </div>
+                  </div>
 
-    <footer></footer>
+                  <div class="product-grid text-center">
+                    <div
+                      class="product-mini"
+                      data-aos="zoom-in"
+                      data-aos-delay="400"
+                    >
+                      <img
+                        src="assets/img/product-3.webp"
+                        alt="Product"
+                        class="img-fluid"
+                      />
+                      <span class="mini-price">$89</span>
+                    </div>
+                    <div
+                      class="product-mini"
+                      data-aos="zoom-in"
+                      data-aos-delay="500"
+                    >
+                      <img
+                        src="assets/img/product-5.webp"
+                        alt="Product"
+                        class="img-fluid"
+                      />
+                      <span class="mini-price">$149</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="floating-elements">
+                  <div
+                    class="floating-icon cart"
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                  >
+                    <i class="bi bi-cart3"></i>
+                    <span class="notification-dot">3</span>
+                  </div>
+                  <div
+                    class="floating-icon wishlist"
+                    data-aos="fade-up"
+                    data-aos-delay="700"
+                  >
+                    <i class="bi bi-heart"></i>
+                  </div>
+                  <div
+                    class="floating-icon search"
+                    data-aos="fade-up"
+                    data-aos-delay="800"
+                  >
+                    <i class="bi bi-search"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Hero Section -->
+    </main>
+
+    <!-- <footer class="text-center py-4">
+      &copy; 2025 NiceShop. All rights reserved.
+    </footer> -->
+
     <script src="assets/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
