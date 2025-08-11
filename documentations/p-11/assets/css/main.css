@@ -435,7 +435,6 @@ a {
 
 .product-showcase:hover {
   box-shadow: 0 15px 30px rgb(0 0 0 / 0.15);
-  transform: scale(1.02); /* Slight scale for the card itself */
 }
 
 .product-showcase .product-card.featured {
@@ -454,7 +453,7 @@ a {
 }
 
 .product-showcase:hover .product-card.featured img {
-  transform: scale(1.05); /* Slight zoom on hover */
+  transform: scale(1.05);
 }
 
 .product-showcase.product-badge {
@@ -485,7 +484,7 @@ a {
   align-items: center;
 }
 
-.product-info.sale-price {
+.product-info .sale-price {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-color);
@@ -510,17 +509,22 @@ a {
 .product-grid .product-mini {
   width: 110px;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: transform 0.3s ease;
-  background-color: #ffff;
+  background-color: #fff;
   padding: 10px 20px;
   margin-bottom: 30px;
 }
-
 .product-mini:hover {
-  transform: scale(1.05);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-grid .product-mini img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .product-mini img {
@@ -537,17 +541,47 @@ a {
   font-size: 0.85rem;
 }
 
-/* Floating icons */
 .floating-elements {
   position: absolute;
-  top: 10%;
-  right: -40px;
   display: flex;
-  flex-direction: row;
-  gap: 1.25rem;
+  gap: 7rem;
 }
 
-.floating-elements .floating-icon {
+/* Left icons */
+.floating-elements.left {
+  top: 50%;
+  left: -70px;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+
+/* Right icon */
+.floating-elements.right {
+  top: 50%;
+  right: -70px;
+  transform: translateY(-50%);
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-6px) rotate(2deg) scale(1.02);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  75% {
+    transform: translateY(6px) rotate(-2deg) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+.floating-icon {
   background: var(--background-color);
   width: 50px;
   height: 50px;
@@ -558,14 +592,8 @@ a {
   justify-content: center;
   cursor: pointer;
   position: relative;
-  transition: background-color 0.3s ease;
-  color: var(--primary-color);
   font-size: 1.4rem;
-}
-
-.floating-elements .floating-icon:hover {
-  background-color: var(--hover-bg-color);
-  color: white;
+  animation: float 3.5s ease-in-out infinite;
 }
 
 .notification-dot {
@@ -767,12 +795,12 @@ a {
   height: auto;
 }
 
-.category-card h4 {
+.category-card .category-content h4 {
   margin-bottom: 0.3rem;
   color: #222;
 }
 
-.category-card p {
+.category-card .category-content p {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 1rem;
@@ -780,51 +808,52 @@ a {
   display: inline-block;
 }
 
-.card-link {
+.category-card .category-content .card-link {
   font-weight: 600;
-  color: #007bff;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 0.95rem;
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  border-bottom: 2px solid transparent;
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
-.card-link:hover {
-  color: #0056b3;
+.category-card .category-content .card-link:hover i {
+  color: var(--active-bg-color);
   border-color: var(--btn-bg-hover);
+  transform: translateX(7px);
+  transition: all 0.3s ease;
 }
 
-.card-link i {
+.category-card .category-content .card-link i {
   font-size: 1rem;
 }
 
 /* Section title */
-.best-sellers .section-title {
+.category-content .best-sellers .section-title {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.best-sellers .section-title h2 {
+.category-content .best-sellers .section-title h2 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.best-sellers .section-title p {
+.category-content .best-sellers .section-title p {
   color: #6b7280;
   font-size: 0.95rem;
 }
 
 /* Product Card */
-.best-sellers .product-item {
+.category-content .best-sellers .product-item {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.best-sellers .product-item:hover {
+.category-content .best-sellers .product-item:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
@@ -928,6 +957,7 @@ a {
 
 .best-sellers .cart-btn:hover {
   background: var(--btn-bg-hover);
+  color: var(--hover-bg-color);
 }
 
 /* Product Info */
