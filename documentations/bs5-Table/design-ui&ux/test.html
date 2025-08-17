@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="km">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khmer Products Platform</title>
+
+    <!-- Bootstrap 5.3.7 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+
+    <style>
+      body {
+        font-family: "Kantumruy Pro", sans-serif;
+      }
+      .hero {
+        background: linear-gradient(135deg, #0084ff, #00c897);
+        color: #fff;
+        padding: 100px 0;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+      }
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+      .benefit-icon {
+        font-size: 2.5rem;
+        color: #00c897;
+      }
+      footer {
+        background: #212529;
+        color: #ccc;
+        padding: 40px 0;
+      }
+      footer a {
+        color: #bbb;
+        text-decoration: none;
+      }
+      footer a:hover {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. Hero Section -->
+    <section
+      class="hero d-flex flex-column justify-content-center align-items-center"
+    >
+      <h1 data-aos="fade-up">វេទិកាផលិតផលខ្មែរ</h1>
+      <p data-aos="fade-up" data-aos-delay="100">
+        ភ្ជាប់អ្នកលក់ និងអ្នកទិញជាតិខ្មែរ
+      </p>
+      <div class="mt-3" data-aos="fade-up" data-aos-delay="200">
+        <a href="#" class="btn btn-light btn-lg me-2">ចាប់ផ្តើមទិញ</a>
+        <a href="#" class="btn btn-outline-light btn-lg">ចុះឈ្មោះអ្នកលក់</a>
+      </div>
+      <div class="mt-4 w-50">
+        <input
+          type="text"
+          class="form-control form-control-lg"
+          placeholder="ស្វែងរកផលិតផល..."
+        />
+      </div>
+    </section>
+
+    <!-- 2. Featured Products -->
+    <section class="container py-5">
+      <h2 class="mb-4 text-center">ផលិតផលពិសេស</h2>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide card p-3">
+            <img
+              src="https://via.placeholder.com/300"
+              class="card-img-top"
+              alt=""
+            />
+            <div class="card-body">
+              <h5 class="card-title">ផលិតផល A</h5>
+              <p class="card-text text-muted">$20</p>
+            </div>
+          </div>
+          <div class="swiper-slide card p-3">…</div>
+          <div class="swiper-slide card p-3">…</div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- 3. Business Events -->
+    <section class="container py-5">
+      <h2 class="mb-4 text-center">ព្រឹត្តិការណ៍ពាណិជ្ជកម្ម</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img
+              src="https://via.placeholder.com/400x200"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Khmer Food Expo 2025</h5>
+              <p class="text-muted">ថ្ងៃ: ២៥ មិថុនា ២០២៥</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">ចូលមើល</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Quick Links -->
+    <section class="container py-5 text-center">
+      <h2 class="mb-4">Quick Links</h2>
+      <div class="row g-4">
+        <div class="col-md-2 col-6">
+          <div class="p-3 border rounded h-100">
+            <i class="bi bi-box-seam fs-1 text-primary"></i>
+            <p class="mt-2">ផលិតផល</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-6">
+          <div class="p-3 border rounded h-100">
+            <i class="bi bi-shop fs-1 text-success"></i>
+            <p class="mt-2">អ្នកលក់</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Platform Benefits -->
+    <section class="container py-5">
+      <h2 class="mb-4 text-center">អត្ថប្រយោជន៍វេទិកា</h2>
+      <div class="row g-4 text-center">
+        <div class="col-md-3">
+          <i class="bi bi-shield-check benefit-icon"></i>
+          <h6 class="mt-2">ទំនុកចិត្ត</h6>
+        </div>
+        <div class="col-md-3">
+          <i class="bi bi-credit-card benefit-icon"></i>
+          <h6 class="mt-2">ទូទាត់មានសុវត្ថិភាព</h6>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Statistics -->
+    <section class="bg-light py-5 text-center">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="stat-number" data-count="500">0</div>
+            <p>Vendors</p>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-number" data-count="5000">0</div>
+            <p>Products</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Testimonials -->
+    <section class="container py-5">
+      <h2 class="text-center mb-4">មតិយោបល់អតិថិជន</h2>
+      <div class="swiper testimonialSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide p-4 bg-light rounded">
+            <p>"វេទិកានេះជួយខ្ញុំទិញផលិតផលខ្មែរ​ងាយស្រួល!"</p>
+            <strong>- សុផា</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CTA Join -->
+    <section class="py-5 text-center" style="background: #00c897; color: #fff">
+      <h2>ចូលរួមជាផ្នែកនៃវេទិកាផលិតផលខ្មែរ</h2>
+      <a href="#" class="btn btn-light btn-lg mt-3">ចុះឈ្មោះអ្នកលក់</a>
+    </section>
+
+    <!-- 10. Newsletter -->
+    <section class="container py-5 text-center">
+      <h2>Newsletter</h2>
+      <p>ទទួលព័ត៌មានថ្មីៗអំពីផលិតផលខ្មែរ</p>
+      <form class="d-flex justify-content-center">
+        <input
+          type="email"
+          class="form-control w-50"
+          placeholder="Email Address"
+        />
+        <button class="btn btn-primary ms-2">Subscribe</button>
+      </form>
+    </section>
+    <!-- 8. Tourism & Culture Highlight -->
+    <section class="container py-5">
+      <h2 class="mb-4 text-center">ទេសចរណ៍ និងវប្បធម៌</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img
+              src="https://via.placeholder.com/400x250"
+              class="card-img-top"
+              alt="Angkor Wat"
+            />
+            <div class="card-body">
+              <h5 class="card-title">អង្គរវត្ត</h5>
+              <p class="text-muted">មរតកពិភពលោក និងទេសចរណ៍ល្បីរបស់កម្ពុជា</p>
+              <a href="#" class="btn btn-sm btn-outline-success">អានបន្ថែម</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img
+              src="https://via.placeholder.com/400x250"
+              class="card-img-top"
+              alt="Khmer Food"
+            />
+            <div class="card-body">
+              <h5 class="card-title">ម្ហូបខ្មែរ</h5>
+              <p class="text-muted">
+                អាម៉ុក ត្រី, បាយស្ករ, និងម្ហូបប្រពៃណីផ្សេងៗ
+              </p>
+              <a href="#" class="btn btn-sm btn-outline-success">ស្វែងយល់</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">© 2025 Khmer Products</div>
+          <div class="col-md-4 text-center">
+            <a href="#">About</a> | <a href="#">Contact</a>
+          </div>
+          <div class="col-md-4 text-end">
+            <i class="bi bi-facebook me-2"></i>
+            <i class="bi bi-telegram me-2"></i>
+            <i class="bi bi-instagram"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      AOS.init();
+      new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        pagination: { el: ".swiper-pagination", clickable: true },
+      });
+      new Swiper(".testimonialSwiper", {
+        autoplay: { delay: 3000 },
+        loop: true,
+      });
+      document.querySelectorAll(".stat-number").forEach((el) => {
+        let count = 0,
+          target = +el.dataset.count;
+        let interval = setInterval(() => {
+          count += Math.ceil(target / 100);
+          el.textContent = count;
+          if (count >= target) {
+            el.textContent = target;
+            clearInterval(interval);
+          }
+        }, 30);
+      });
+    </script>
+  </body>
+</html>
