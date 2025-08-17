@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="km" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>សហគមន៍ផលិតផលខ្មែរ (KPC) — Khmer Products Community</title>
+
+    <!-- Fonts (Khmer + Latin) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap + Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    />
+
+    <!-- Base Style -->
+    <style>
+      :root {
+        --kpc-primary: #12b886;
+        --kpc-primary-2: #099268;
+        --kpc-dark: #0f172a;
+        --kpc-muted: #64748b;
+        --kpc-bg: #f8fafc;
+        --kpc-card: #ffffff;
+        --kpc-border: #e9ecef;
+        --radius-xl: 18px;
+        --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+      }
+      [data-theme="dark"] {
+        --kpc-dark: #e2e8f0;
+        --kpc-bg: #0b1220;
+        --kpc-card: #0f172a;
+        --kpc-border: #1f2937;
+        --kpc-muted: #94a3b8;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+      html,
+      body {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Noto Sans Khmer", "Inter", system-ui, -apple-system,
+          Segoe UI, Roboto, sans-serif;
+        color: var(--kpc-dark);
+        background: var(--kpc-bg);
+      }
+      .btn-kpc {
+        background: var(--kpc-primary);
+        border-color: var(--kpc-primary);
+      }
+      .btn-kpc:hover {
+        background: var(--kpc-primary-2);
+        border-color: var(--kpc-primary-2);
+      }
+      .text-muted {
+        color: var(--kpc-muted) !important;
+      }
+      .card {
+        background: var(--kpc-card);
+        border-color: var(--kpc-border);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow);
+      }
+      .section-title {
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .badge-soft {
+        background: rgba(18, 184, 134, 0.12);
+        color: var(--kpc-primary);
+        border: 1px solid rgba(18, 184, 134, 0.25);
+      }
+      .chip {
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        background: var(--kpc-card);
+        border: 1px solid var(--kpc-border);
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .cover-img {
+        object-fit: cover;
+        width: 100%;
+        height: 220px;
+        border-top-left-radius: var(--radius-xl);
+        border-top-right-radius: var(--radius-xl);
+      }
+      /* Navbar */
+      .navbar {
+        backdrop-filter: saturate(180%) blur(8px);
+        box-shadow: 0 2px 20px rgba(2, 6, 23, 0.05);
+      }
+      .nav-link {
+        font-weight: 600;
+      }
+      .mega {
+        min-width: 760px;
+      }
+      /* Hero */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        border-radius: 24px;
+        background: radial-gradient(
+            1200px 500px at 80% -10%,
+            rgba(18, 184, 134, 0.18),
+            transparent 60%
+          ),
+          linear-gradient(135deg, #0ea5e9 0%, #12b886 40%, #0ea5e9 100%);
+
+        color: white;
+        /* background: linear-gradient(225deg, #102bdd 0%, #e90761 100%); */
+      }
+      .hero .overlay {
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1599058917212-d750089bc07d?q=80&w=1400&auto=format&fit=crop")
+          center/cover;
+        mix-blend: soft-light;
+        opacity: 0.55;
+      }
+      .stat {
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+      }
+      /* Products grid */
+      .product-card .price {
+        font-weight: 800;
+      }
+      .rating i {
+        color: #f59f00;
+      }
+      .filter-bar .form-control,
+      .filter-bar .form-select {
+        border-radius: 12px;
+      }
+      /* Vendors */
+      .vendor-logo {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+      .vendor-card:hover {
+        transform: translateY(-2px);
+        transition: 0.25s;
+      }
+      /* Events */
+      .event-badge {
+        background: #fff3bf;
+        color: #e67700;
+        border: 1px solid #ffe066;
+      }
+      /* Footer */
+      footer a {
+        color: inherit;
+        text-decoration: none;
+      }
+      footer a:hover {
+        color: var(--kpc-primary);
+      }
+      /* Utilities */
+      .sticky-cta {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 1040;
+      }
+      .back-to-top {
+        position: fixed;
+        right: 16px;
+        bottom: 80px;
+        z-index: 1040;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.25s;
+      }
+      .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+      /* Accordion clean */
+      .accordion-button {
+        font-weight: 600;
+      }
+      /* Map aspect */
+      .map-wrap {
+        position: relative;
+        padding-top: 56.25%;
+      }
+      .map-wrap iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: 16px;
+      }
+      /* Dark tweaks */
+      [data-theme="dark"] .hero .overlay {
+        opacity: 0.45;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary py-3 sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#"
+          ><span class="text-success">K</span>PC</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mobileNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-3 me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">ទំព័រដើម</a>
+            </li>
+            <li class="nav-item dropdown position-static">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >ជំពូក</a
+              >
+              <div class="dropdown-menu p-4 mega shadow border-0 rounded-4">
+                <div class="row g-4">
+                  <div class="col-6 col-lg-4">
+                    <h6 class="text-uppercase text-muted">ផលិតផល</h6>
+                    <ul class="list-unstyled small">
+                      <li>
+                        <a class="dropdown-item" href="#products">កាតាឡុក</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#categories">ប្រភេទ</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#vendors">អ្នកផលិត</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-6 col-lg-4">
+                    <h6 class="text-uppercase text-muted">មាតិកា</h6>
+                    <ul class="list-unstyled small">
+                      <li>
+                        <a class="dropdown-item" href="#news">ព័ត៌មាន/អត្ថបទ</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#events"
+                          >ព្រឹត្តិការណ៍</a
+                        >
+                      </li>
+                      <li><a class="dropdown-item" href="#faq">FAQ</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-12 col-lg-4">
+                    <div class="p-3 bg-light rounded-4">
+                      <h6 class="mb-1">ស្វែងរកឆាប់រហ័ស</h6>
+                      <p class="small text-muted mb-2">
+                        ស្វែងរកផលិតផល/អ្នកផលិត
+                      </p>
+                      <div class="input-group">
+                        <span class="input-group-text bg-white"
+                          ><i class="ri-search-line"></i
+                        ></span>
+                        <input
+                          id="globalSearch"
+                          type="text"
+                          class="form-control"
+                          placeholder="ឈ្មោះ / ប្រភេទ / តម្លៃ"
+                        />
+                        <button
+                          class="btn btn-kpc"
+                          onclick="applyGlobalSearch()"
+                        >
+                          ស្វែងរក
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">ទំនាក់ទំនង</a>
+            </li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-2">
+            <button id="themeToggle" class="btn btn-outline-secondary btn-sm">
+              <i class="ri-moon-line me-1"></i><span>Dark</span>
+            </button>
+            <a href="#vendors" class="btn btn-kpc btn-sm"
+              ><i class="ri-store-2-line me-1"></i>ចូលរួមជាអ្នកផលិត</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Offcanvas Mobile -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title fw-bold">KPC Menu</h5>
+        <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column gap-3">
+        <a class="btn btn-light" href="#home">ទំព័រដើម</a>
+        <a class="btn btn-light" href="#products">ផលិតផល</a>
+        <a class="btn btn-light" href="#vendors">អ្នកផលិត</a>
+        <a class="btn btn-light" href="#news">ព័ត៌មាន</a>
+        <a class="btn btn-light" href="#events">ព្រឹត្តិការណ៍</a>
+        <a class="btn btn-light" href="#faq">FAQ</a>
+        <a class="btn btn-light" href="#contact">ទំនាក់ទំនង</a>
+        <div class="mt-2">
+          <button
+            class="btn btn-outline-secondary w-100"
+            id="themeToggleMobile"
+          >
+            <i class="ri-moon-line me-1"></i> Dark
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <header class="container my-4" id="home">
+      <div class="hero p-4 p-lg-5">
+        <div class="overlay"></div>
+        <div class="position-relative">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <span class="badge badge-soft mb-2"
+                >Khmer Products Community</span
+              >
+              <h1 class="display-5 fw-black mb-3">
+                ផ្សព្វផ្សាយសមិទ្ធផល និងផលិតផលខ្មែរ ទៅសកលលោក
+              </h1>
+              <p class="lead mb-4">
+                វេទិកាដែលភ្ជាប់
+                <strong>អ្នកផលិត • អ្នកលក់ • អ្នកទិញ</strong>
+                ដើម្បីបង្កើនពាណិជ្ជកម្ម និងទំនុកចិត្តលើផលិតផលជាតិ។
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="#products" class="btn btn-light text-dark"
+                  ><i class="ri-shopping-bag-3-line me-1"></i> មើលផលិតផល</a
+                >
+                <a href="#vendors" class="btn btn-outline-light"
+                  ><i class="ri-hand-heart-line me-1"></i> ចូលរួមជាសហការ</a
+                >
+              </div>
+            </div>
+            <div class="col-lg-5 mt-4 mt-lg-0">
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="p-3 stat text-center">
+                    <div class="display-6 fw-bold">1.2k+</div>
+                    <div class="small">ផលិតផលសកម្ម</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3 stat text-center">
+                    <div class="display-6 fw-bold">380+</div>
+                    <div class="small">អ្នកផលិត</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3 stat text-center">
+                    <div class="display-6 fw-bold">24</div>
+                    <div class="small">ប្រភេទ</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3 stat text-center">
+                    <div class="display-6 fw-bold">15</div>
+                    <div class="small">ខេត្ត/ក្រុង</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-3 small opacity-75">ទិន្នន័យសម្រាប់សាកល្បង</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CATEGORIES -->
+    <section class="container my-5" id="categories">
+      <div
+        class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3"
+      >
+        <h2 class="section-title m-0">ប្រភេទផលិតផល</h2>
+        <div class="d-flex gap-2 flex-wrap">
+          <span class="chip"><i class="ri-plant-line"></i> កសិកម្ម</span>
+          <span class="chip"><i class="ri-brush-2-line"></i> សិប្បកម្ម</span>
+          <span class="chip"><i class="ri-handbag-line"></i> សម្លៀកបំពាក់</span>
+          <span class="chip"><i class="ri-cup-line"></i> អាហារ/ភេសជ្ជៈ</span>
+          <span class="chip"><i class="ri-cpu-line"></i> បច្ចេកវិទ្យា</span>
+        </div>
+      </div>
+      <p class="text-muted">
+        អ្នកអាចស្វែងរកតាមប្រភេទនៅខាងក្រោម និងប្រើ Filter សម្រាប់តម្លៃ/ពិន្ទុ។
+      </p>
+    </section>
+
+    <!-- PRODUCT FILTER BAR -->
+    <section class="container filter-bar mb-3">
+      <div class="card p-3">
+        <div class="row g-3 align-items-end">
+          <div class="col-12 col-md-4">
+            <label class="form-label">ស្វែងរក</label>
+            <input
+              id="q"
+              type="text"
+              class="form-control"
+              placeholder="ឧ. កាហ្វេ, បន្លែ, Silk, ..."
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <label class="form-label">ប្រភេទ</label>
+            <select id="cat" class="form-select">
+              <option value="">ទាំងអស់</option>
+              <option>កសិកម្ម</option>
+              <option>សិប្បកម្ម</option>
+              <option>សម្លៀកបំពាក់</option>
+              <option>អាហារ/ភេសជ្ជៈ</option>
+              <option>បច្ចេកវិទ្យា</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-2">
+            <label class="form-label">តម្លៃអប្បបរមា ($)</label>
+            <input
+              id="min"
+              type="number"
+              class="form-control"
+              min="0"
+              placeholder="0"
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <label class="form-label">តម្លៃអតិបរមា ($)</label>
+            <input
+              id="max"
+              type="number"
+              class="form-control"
+              min="0"
+              placeholder="500"
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <label class="form-label">តម្រៀប</label>
+            <select id="sort" class="form-select">
+              <option value="latest">ថ្មីបំផុត</option>
+              <option value="priceAsc">តម្លៃ​កើន</option>
+              <option value="priceDesc">តម្លៃ​ចុះ</option>
+              <option value="ratingDesc">ពិន្ទុខ្ពស់</option>
+            </select>
+          </div>
+          <div class="col-12 d-flex gap-2">
+            <button class="btn btn-kpc" onclick="applyFilters()">
+              <i class="ri-equalizer-line me-1"></i> អនុវត្ត
+            </button>
+            <button class="btn btn-outline-secondary" onclick="resetFilters()">
+              កំណត់ឡើងវិញ
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS GRID -->
+    <section class="container mb-5" id="products">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="section-title m-0">កាតាឡុកផលិតផល</h2>
+        <span id="resultCount" class="text-muted small">—</span>
+      </div>
+      <div id="productGrid" class="row g-4"></div>
+      <div class="d-flex justify-content-center mt-4">
+        <button
+          id="loadMoreBtn"
+          class="btn btn-outline-secondary px-4"
+          style="display: none"
+          onclick="loadMore()"
+        >
+          បង្ហាញបន្ថែម
+        </button>
+      </div>
+    </section>
+
+    <!-- VENDORS -->
+    <section class="container mb-5" id="vendors">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="section-title m-0">អ្នកផលិត/សហការ</h2>
+        <a class="btn btn-outline-success" href="#"
+          ><i class="ri-user-add-line me-1"></i> ចុះឈ្មោះ Vendor</a
+        >
+      </div>
+      <div id="vendorGrid" class="row g-4"></div>
+    </section>
+
+    <!-- EVENTS -->
+    <section class="container mb-5" id="events">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="section-title m-0">ព្រឹត្តិការណ៍និងពិព័រណ៍</h2>
+        <span class="badge event-badge rounded-pill px-3 py-2"
+          ><i class="ri-calendar-event-line me-1"></i> រដូវកាល ២០២៥</span
+        >
+      </div>
+      <div id="eventList" class="row g-4"></div>
+    </section>
+
+    <!-- NEWS/BLOG -->
+    <section class="container mb-5" id="news">
+      <h2 class="section-title mb-3">ព័ត៌មាន និង អត្ថបទ</h2>
+      <div id="newsGrid" class="row g-4"></div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="container mb-5">
+      <div class="card p-4 p-lg-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-4">
+            <h3 class="section-title">សំឡេងពីសហគមន៍</h3>
+            <p class="text-muted">
+              មតិយោបល់ពីអ្នកទិញ និងអ្នកផលិតដែលចូលរួមជាមួយ KPC។
+            </p>
+          </div>
+          <div class="col-lg-8">
+            <div class="row g-3" id="testiWrap"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container mb-5" id="faq">
+      <h2 class="section-title mb-3">សំណួរញឹកញាប់ (FAQ)</h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="accordion" id="faqLeft">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#f1"
+                >
+                  របៀបចុះឈ្មោះជាអ្នកផលិត?
+                </button>
+              </h2>
+              <div
+                id="f1"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#faqLeft"
+              >
+                <div class="accordion-body">
+                  ចុច “ចុះឈ្មោះ Vendor” បំពេញពត៌មាន
+                  ហើយក្រុមការងារយើងនឹងអនុម័តក្នុងរយៈពេលខ្លី។
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#f2"
+                >
+                  KPC មានប្រព័ន្ធការលក់ Online ទេ?
+                </button>
+              </h2>
+              <div
+                id="f2"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqLeft"
+              >
+                <div class="accordion-body">
+                  Version នេះផ្តោតលើការផ្សព្វផ្សាយ និងភ្ជាប់ទំនាក់ទំនង។ ប្រព័ន្ធ
+                  Checkout អាចបន្ថែមពេលក្រោយ។
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="accordion" id="faqRight">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#f3"
+                >
+                  អាចវាស់វែងផលប៉ះពាល់/ស្ថិតិបានទេ?
+                </button>
+              </h2>
+              <div
+                id="f3"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqRight"
+              >
+                <div class="accordion-body">
+                  ទិន្នន័យទស្សនា និងការទំនាក់ទំនងត្រូវបានបង្ហាញក្នុង Dashboard
+                  Admin (អាចអភិវឌ្ឍបន្ថែម)।
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#f4"
+                >
+                  គាំទ្រភាសាអង់គ្លេសទេ?
+                </button>
+              </h2>
+              <div
+                id="f4"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqRight"
+              >
+                <div class="accordion-body">
+                  UI អាចប្តូរភាសា (Kh/En) តាមការកំណត់។ Version Frontend
+                  នេះរៀបចំរួចសម្រាប់ bilingual។
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="container mb-5" id="contact">
+      <div class="card p-4 p-lg-5">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <h3 class="section-title">ទំនាក់ទំនងមកកាន់យើង</h3>
+            <form id="contactForm" class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">ឈ្មោះ</label>
+                <input type="text" class="form-control" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">អ៊ីមែល</label>
+                <input type="email" class="form-control" required />
+              </div>
+              <div class="col-12">
+                <label class="form-label">ប្រធានបទ</label>
+                <input type="text" class="form-control" required />
+              </div>
+              <div class="col-12">
+                <label class="form-label">សារ</label>
+                <textarea class="form-control" rows="5" required></textarea>
+              </div>
+              <div class="col-12 d-flex gap-2">
+                <button class="btn btn-kpc" type="submit">
+                  <i class="ri-send-plane-line me-1"></i> ផ្ញើ
+                </button>
+                <div
+                  id="contactMsg"
+                  class="small text-muted d-flex align-items-center"
+                ></div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <div class="map-wrap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15636.59439130541!2d104.915!3d11.556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513c5f1c5bf5%3A0x3a8c!2sPhnom%20Penh!5e0!3m2!1sen!2skh!4v1680000000000"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="container mb-5">
+      <div class="card p-4 p-lg-5 text-center">
+        <h3 class="section-title">ចុះឈ្មោះទទួលព័ត៌មាន</h3>
+        <p class="text-muted">
+          ទទួលបានព័ត៌មានថ្មីៗអំពីផលិតផល និងព្រឹត្តិការណ៍។
+        </p>
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text bg-white"
+                ><i class="ri-mail-line"></i
+              ></span>
+              <input
+                id="newsletterEmail"
+                type="email"
+                class="form-control"
+                placeholder="you@email.com"
+              />
+              <button class="btn btn-kpc" onclick="subscribe()">
+                Subscribe
+              </button>
+            </div>
+            <div id="subMsg" class="small mt-2 text-muted"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="pt-5 pb-4 border-top" style="background: var(--kpc-card)">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h5 class="fw-bold"><span class="text-success">K</span>PC</h5>
+            <p class="text-muted">សហគមន៍ផ្សព្វផ្សាយសមិទ្ធផល និងផលិតផលខ្មែរ។</p>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-outline-secondary btn-sm"
+                ><i class="ri-facebook-line"></i
+              ></a>
+              <a href="#" class="btn btn-outline-secondary btn-sm"
+                ><i class="ri-telegram-line"></i
+              ></a>
+              <a href="#" class="btn btn-outline-secondary btn-sm"
+                ><i class="ri-instagram-line"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <h6 class="text-uppercase text-muted">ទំព័រ</h6>
+            <ul class="list-unstyled small">
+              <li><a href="#products">ផលិតផល</a></li>
+              <li><a href="#vendors">អ្នកផលិត</a></li>
+              <li><a href="#news">ព័ត៌មាន</a></li>
+              <li><a href="#events">ព្រឹត្តិការណ៍</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-uppercase text-muted">ជំនួយ</h6>
+            <ul class="list-unstyled small">
+              <li><a href="#faq">សំណួរ FAQs</a></li>
+              <li><a href="#contact">ទំនាក់ទំនង</a></li>
+              <li><a href="#">គោលការណ៍ឯកជនភាព</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-uppercase text-muted">ទីតាំង</h6>
+            <p class="small">
+              ភ្នំពេញ, កម្ពុជា<br />info@kpc.org<br />+855 XX XXX XXXX
+            </p>
+          </div>
+        </div>
+        <div
+          class="border-top mt-4 pt-3 d-flex justify-content-between small text-muted"
+        >
+          <span>© 2025 KPC. All rights reserved.</span>
+          <a href="#home" class="text-decoration-none">ទៅលើក្បាលទំព័រ ↑</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Sticky Actions -->
+    <button
+      class="btn btn-kpc rounded-pill shadow sticky-cta"
+      onclick="openVendorModal()"
+    >
+      <i class="ri-add-line me-1"></i> បន្ថែមផលិតផល
+    </button>
+    <a
+      id="backToTop"
+      class="btn btn-outline-secondary rounded-pill back-to-top"
+      href="#home"
+      ><i class="ri-arrow-up-line"></i
+    ></a>
+
+    <!-- PRODUCT DETAIL MODAL -->
+    <div class="modal fade" id="productModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="pmTitle">Product</h5>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <img
+                  id="pmImg"
+                  class="w-100 rounded-3"
+                  style="object-fit: cover; height: 300px"
+                />
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center justify-content-between">
+                  <span id="pmCategory" class="badge badge-soft"></span>
+                  <div class="rating" id="pmRating"></div>
+                </div>
+                <p class="mt-3" id="pmDesc"></p>
+                <div class="h4" id="pmPrice"></div>
+                <div class="small text-muted" id="pmVendor"></div>
+                <div class="d-flex gap-2 mt-3">
+                  <a id="pmContact" target="_blank" class="btn btn-kpc"
+                    ><i class="ri-chat-1-line me-1"></i> ទំនាក់ទំនងអ្នកលក់</a
+                  >
+                  <button
+                    class="btn btn-outline-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    បិទ
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer small text-muted">
+            * ទិន្នន័យត្រឹមបង្ហាញគំរូ Frontend
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS: Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS: App Logic -->
+    <script>
+      // ----------------- Sample DATA -----------------
+      const PRODUCTS = [
+        {
+          id: 1,
+          title: "កាហ្វេខ្មែរ Premium",
+          cat: "អាហារ/ភេសជ្ជៈ",
+          price: 8.5,
+          rating: 4.7,
+          img: "https://images.unsplash.com/photo-1504630083234-14187a9df0f5?q=80&w=1200&auto=format&fit=crop",
+          desc: "កាហ្វេគ្រាប់ដុតថ្មី ពីម៉ុងដុលគីរី។",
+          vendorId: 1,
+          date: "2025-08-01",
+        },
+        {
+          id: 2,
+          title: "ក្រណាត់សូត្រខ្មែរ Silk",
+          cat: "សម្លៀកបំពាក់",
+          price: 45,
+          rating: 4.8,
+          img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=1200&auto=format&fit=crop",
+          desc: "សូត្រខ្មែរ ដំណើរការដោយដៃ ពណ៌ធម្មជាតិ។",
+          vendorId: 2,
+          date: "2025-07-21",
+        },
+        {
+          id: 3,
+          title: "ឆ្មារ ឬីងព្រៃស្រស់ (Organic)",
+          cat: "កសិកម្ម",
+          price: 2.2,
+          rating: 4.3,
+          img: "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=1200&auto=format&fit=crop",
+          desc: "បន្លែស្រស់ពីកសិដ្ឋានស្តង់ដារ GAP។",
+          vendorId: 3,
+          date: "2025-06-20",
+        },
+        {
+          id: 4,
+          title: "ឆ្អឹងដែកសិល្បៈ (Handcraft)",
+          cat: "សិប្បកម្ម",
+          price: 28,
+          rating: 4.6,
+          img: "https://images.unsplash.com/photo-1581368129682-e4c0ddd3d0be?q=80&w=1200&auto=format&fit=crop",
+          desc: "ស្នាដៃសិប្បកម្មពីឈើខ្លាញក្រាស់។",
+          vendorId: 4,
+          date: "2025-08-10",
+        },
+        {
+          id: 5,
+          title: "តែព្រៃកោះកុង",
+          cat: "អាហារ/ភេសជ្ជៈ",
+          price: 6.2,
+          rating: 4.4,
+          img: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=1200&auto=format&fit=crop",
+          desc: "តែបៃតងក្លិនផ្កាឆៃ ជាតិអង់ទីអុកស៊ីដង់ខ្ពស់។",
+          vendorId: 1,
+          date: "2025-07-30",
+        },
+        {
+          id: 6,
+          title: "ស្រោមដៃ Crochet",
+          cat: "សិប្បកម្ម",
+          price: 12.5,
+          rating: 4.1,
+          img: "https://images.unsplash.com/photo-1582738412115-44b1d3f4b3a7?q=80&w=1200&auto=format&fit=crop",
+          desc: "ផលិតដោយសហគមន៍ស្ត្រីជនបទ។",
+          vendorId: 4,
+          date: "2025-05-11",
+        },
+        {
+          id: 7,
+          title: "ចំណីអង្ករអូត្រ",
+          cat: "កសិកម្ម",
+          price: 1.8,
+          rating: 4.0,
+          img: "https://images.unsplash.com/photo-1604335399105-a0d7b2a2fb25?q=80&w=1200&auto=format&fit=crop",
+          desc: "អង្ករដាំដោយទឹកភ្លៀង គ្មានគីមីពុល។",
+          vendorId: 3,
+          date: "2025-06-10",
+        },
+        {
+          id: 8,
+          title: "Jam ផ្លែឈើ Mixed",
+          cat: "អាហារ/ភេសជ្ជៈ",
+          price: 3.9,
+          rating: 4.2,
+          img: "https://images.unsplash.com/photo-1505575972945-281b3fab2b5a?q=80&w=1200&auto=format&fit=crop",
+          desc: "Jam ផ្លែឈើដៃ Homemade ពីខេត្តកំពត។",
+          vendorId: 2,
+          date: "2025-07-05",
+        },
+        {
+          id: 9,
+          title: "ស្រោមកាបូបលាម៉ា",
+          cat: "សម្លៀកបំពាក់",
+          price: 22,
+          rating: 4.5,
+          img: "https://images.unsplash.com/photo-1520975682031-6c003c1b0715?q=80&w=1200&auto=format&fit=crop",
+          desc: "កាបូបក្រណាត់ជប៉ុន តម្លៃសមរម្យ។",
+          vendorId: 2,
+          date: "2025-08-12",
+        },
+        {
+          id: 10,
+          title: "IoT សម្រាប់កសិដ្ឋាន MiniKit",
+          cat: "បច្ចេកវិទ្យា",
+          price: 79,
+          rating: 4.9,
+          img: "https://images.unsplash.com/photo-1565034946487-077f59f6f9c3?q=80&w=1200&auto=format&fit=crop",
+          desc: "ឧបករណ៍មើលសីតុណ្ហភាព/សំណើម ដោយបញ្ជាប់ហ្វូន។",
+          vendorId: 5,
+          date: "2025-08-09",
+        },
+        {
+          id: 11,
+          title: "ស្រាស្ករ Palm Wine",
+          cat: "អាហារ/ភេសជ្ជៈ",
+          price: 5.5,
+          rating: 3.9,
+          img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1200&auto=format&fit=crop",
+          desc: "ផលិតពីត្នោត កំពង់ស្ពឺ។",
+          vendorId: 6,
+          date: "2025-05-22",
+        },
+        {
+          id: 12,
+          title: "ខ្នើយស៊ុមសូត្រ",
+          cat: "សិប្បកម្ម",
+          price: 16.8,
+          rating: 4.6,
+          img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop",
+          desc: "ខ្នើយដេរដោយដៃ ក្រណាត់សូត្រ។",
+          vendorId: 4,
+          date: "2025-07-17",
+        },
+      ];
+      const VENDORS = [
+        {
+          id: 1,
+          name: "Mondulkiri Coffee Coop",
+          img: "https://images.unsplash.com/photo-1558877385-3b4de9a04f85?q=80&w=400&auto=format&fit=crop",
+          loc: "ម៉ុងដុលគីរី",
+          products: [1, 5],
+        },
+        {
+          id: 2,
+          name: "Silk & Craft Studio",
+          img: "https://images.unsplash.com/photo-1520975682031-6c003c1b0715?q=80&w=400&auto=format&fit=crop",
+          loc: "ភ្នំពេញ",
+          products: [2, 8, 9],
+        },
+        {
+          id: 3,
+          name: "Green Farm GAP",
+          img: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=400&auto=format&fit=crop",
+          loc: "កណ្ដាល",
+          products: [3, 7],
+        },
+        {
+          id: 4,
+          name: "Khmer Handcrafts Union",
+          img: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=400&auto=format&fit=crop",
+          loc: "បាត់ដំបង",
+          products: [4, 6, 12],
+        },
+        {
+          id: 5,
+          name: "AgriTech Lab",
+          img: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=400&auto=format&fit=crop",
+          loc: "សៀមរាប",
+          products: [10],
+        },
+        {
+          id: 6,
+          name: "Palm Family",
+          img: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=400&auto=format&fit=crop",
+          loc: "កំពង់ស្ពឺ",
+          products: [11],
+        },
+      ];
+      const EVENTS = [
+        {
+          title: "ពិព័រណ៍ផលិតផលជាតិ ២០២៥",
+          date: "2025-09-10",
+          place: "Diamond Island, Phnom Penh",
+          cover:
+            "https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1200&auto=format&fit=crop",
+        },
+        {
+          title: "AgriTech Summit Cambodia",
+          date: "2025-11-02",
+          place: "Siem Reap",
+          cover:
+            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+        },
+        {
+          title: "Khmer Handcraft Week",
+          date: "2025-12-15",
+          place: "Battambang",
+          cover:
+            "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?q=80&w=1200&auto=format&fit=crop",
+        },
+      ];
+      const NEWS = [
+        {
+          title: "ការនាំចេញកាហ្វេខ្មែរ កើនឡើង",
+          date: "2025-08-05",
+          cover:
+            "https://images.unsplash.com/photo-1459755486867-b55449bb39ff?q=80&w=1200&auto=format&fit=crop",
+        },
+        {
+          title: "សហគមន៍សិប្បកម្ម បង្កើតម៉ូឌែល ESG",
+          date: "2025-07-18",
+          cover:
+            "https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?q=80&w=1200&auto=format&fit=crop",
+        },
+        {
+          title: "Blockchain ក្នុងតាមដានប្រភពផលិតផល",
+          date: "2025-06-09",
+          cover:
+            "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop",
+        },
+      ];
+      const TESTI = [
+        {
+          name: "សុវណ្ណា",
+          msg: "គេហទំព័រនេះជួយឲ្យខ្ញុំរកអ្នកផ្គត់ផ្គង់ក្នុងស្រុកបានឆាប់!",
+          role: "អ្នកទិញ",
+        },
+        {
+          name: "វីរៈ",
+          msg: "អាចបង្ហាញស្នាដៃសិប្បកម្មទៅអតិថិជនថ្មីៗបានងាយ។",
+          role: "អ្នកផលិត",
+        },
+        {
+          name: "Sophea",
+          msg: "Filter រហ័ស និង UI ខ្មែរ ជួយសង្គ្រោះពេលវេលាខ្លាំង។",
+          role: "អ្នកលក់",
+        },
+      ];
+
+      // ----------------- State -----------------
+      let PAGE = 1,
+        PAGE_SIZE = 8,
+        LATEST_RESULTS = [];
+
+      // ----------------- Helpers -----------------
+      const $ = (sel) => document.querySelector(sel);
+      const $$ = (sel) => document.querySelectorAll(sel);
+      const fmtUSD = (n) => "$" + n.toFixed(2);
+      const stars = (r) => {
+        const full = Math.floor(r),
+          half = r - full >= 0.5;
+        let html = "";
+        for (let i = 1; i <= 5; i++) {
+          if (i <= full) html += '<i class="ri-star-fill"></i>';
+          else if (i === full + 1 && half)
+            html += '<i class="ri-star-half-fill"></i>';
+          else html += '<i class="ri-star-line"></i>';
+        }
+        return html;
+      };
+
+      // ----------------- Renderers -----------------
+      function renderProducts(list, append = false) {
+        const grid = $("#productGrid");
+        if (!append) grid.innerHTML = "";
+        const slice = list.slice((PAGE - 1) * PAGE_SIZE, PAGE * PAGE_SIZE);
+        slice.forEach((p) => {
+          const vendor = VENDORS.find((v) => v.id === p.vendorId);
+          const col = document.createElement("div");
+          col.className = "col-12 col-sm-6 col-lg-3";
+          col.innerHTML = `
+          <div class="card product-card h-100">
+            <img class="cover-img" src="${p.img}" alt="${p.title}">
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge badge-soft">${p.cat}</span>
+                <div class="rating small">${stars(p.rating)}</div>
+              </div>
+              <h6 class="fw-bold">${p.title}</h6>
+              <div class="text-muted small mb-2"><i class="ri-store-2-line"></i> ${
+                vendor?.name ?? "—"
+              }</div>
+              <div class="mt-auto d-flex align-items-center justify-content-between">
+                <div class="price text-success">${fmtUSD(p.price)}</div>
+                <button class="btn btn-outline-secondary btn-sm" onclick='openProduct(${
+                  p.id
+                })'>មើល</button>
+              </div>
+            </div>
+          </div>`;
+          grid.appendChild(col);
+        });
+        // Counter + Load more
+        $("#resultCount").textContent = `រក​បាន ${list.length} ទំនិញ`;
+        const more = PAGE * PAGE_SIZE < list.length;
+        $("#loadMoreBtn").style.display = more ? "inline-block" : "none";
+      }
+
+      function renderVendors() {
+        const grid = $("#vendorGrid");
+        VENDORS.forEach((v) => {
+          const col = document.createElement("div");
+          col.className = "col-12 col-sm-6 col-lg-4";
+          col.innerHTML = `
+          <div class="card vendor-card p-3 h-100">
+            <div class="d-flex gap-3">
+              <img class="vendor-logo" src="${v.img}" alt="${v.name}">
+              <div>
+                <h6 class="fw-bold mb-1">${v.name}</h6>
+                <div class="small text-muted"><i class="ri-map-pin-line me-1"></i>${
+                  v.loc
+                }</div>
+              </div>
+            </div>
+            <div class="mt-3 d-flex flex-wrap gap-1">
+              ${v.products
+                .slice(0, 4)
+                .map(
+                  (pid) =>
+                    `<span class="chip small">${
+                      PRODUCTS.find((p) => p.id === pid)?.title ?? ""
+                    }</span>`
+                )
+                .join("")}
+            </div>
+          </div>`;
+          grid.appendChild(col);
+        });
+      }
+
+      function renderEvents() {
+        const list = $("#eventList");
+        EVENTS.forEach((e) => {
+          const col = document.createElement("div");
+          col.className = "col-12 col-md-4";
+          col.innerHTML = `
+          <div class="card h-100">
+            <img class="cover-img" src="${e.cover}" alt="${e.title}">
+            <div class="card-body">
+              <span class="badge bg-warning-subtle text-warning-emphasis border"> ${new Date(
+                e.date
+              ).toLocaleDateString()} </span>
+              <h6 class="fw-bold mt-2">${e.title}</h6>
+              <div class="small text-muted"><i class="ri-map-pin-line"></i> ${
+                e.place
+              }</div>
+            </div>
+            <div class="card-footer bg-transparent d-flex gap-2">
+              <a class="btn btn-kpc btn-sm" href="#"><i class="ri-ticket-2-line me-1"></i> ចូលរួម</a>
+              <button class="btn btn-outline-secondary btn-sm" onclick="addCalendar('${
+                e.title
+              }','${e.date}','${
+            e.place
+          }')"><i class="ri-calendar-event-line me-1"></i> បន្ថែមកាលវិភាគ</button>
+            </div>
+          </div>`;
+          list.appendChild(col);
+        });
+      }
+
+      function renderNews() {
+        const grid = $("#newsGrid");
+        NEWS.forEach((n) => {
+          const col = document.createElement("div");
+          col.className = "col-12 col-md-4";
+          col.innerHTML = `
+          <article class="card h-100">
+            <img class="cover-img" src="${n.cover}" alt="${n.title}">
+            <div class="card-body d-flex flex-column">
+              <div class="small text-muted">${new Date(
+                n.date
+              ).toLocaleDateString()}</div>
+              <h6 class="fw-bold mt-1">${n.title}</h6>
+              <p class="text-muted small mt-auto">អត្ថបទសង្ខេប... (សម្រាប់គំរូ)</p>
+              <a class="stretched-link" href="#"></a>
+            </div>
+          </article>`;
+          grid.appendChild(col);
+        });
+      }
+
+      function renderTestimonials() {
+        const wrap = $("#testiWrap");
+        TESTI.forEach((t) => {
+          const col = document.createElement("div");
+          col.className = "col-12 col-md-4";
+          col.innerHTML = `
+          <div class="p-3 rounded-4 border h-100" style="background:var(--kpc-card)">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <div class="rounded-circle bg-success-subtle d-inline-flex align-items-center justify-content-center" style="width:40px;height:40px"><i class="ri-user-3-line"></i></div>
+              <div>
+                <div class="fw-bold">${t.name}</div>
+                <div class="small text-muted">${t.role}</div>
+              </div>
+            </div>
+            <p class="mb-0">“${t.msg}”</p>
+          </div>`;
+          wrap.appendChild(col);
+        });
+      }
+
+      // ----------------- Filters -----------------
+      function applyFilters() {
+        const q = $("#q").value.trim().toLowerCase();
+        const cat = $("#cat").value;
+        const min = parseFloat($("#min").value) || 0;
+        const max = parseFloat($("#max").value) || Infinity;
+        const sort = $("#sort").value;
+
+        let list = PRODUCTS.filter((p) => {
+          const text = (p.title + " " + p.cat + " " + p.desc).toLowerCase();
+          const matchQ = !q || text.includes(q);
+          const matchCat = !cat || p.cat === cat;
+          const matchPrice = p.price >= min && p.price <= max;
+          return matchQ && matchCat && matchPrice;
+        });
+
+        // Sort
+        if (sort === "priceAsc") list.sort((a, b) => a.price - b.price);
+        else if (sort === "priceDesc") list.sort((a, b) => b.price - a.price);
+        else if (sort === "ratingDesc")
+          list.sort((a, b) => b.rating - a.rating);
+        else list.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        LATEST_RESULTS = list;
+        PAGE = 1;
+        renderProducts(LATEST_RESULTS, false);
+      }
+
+      function resetFilters() {
+        $("#q").value = "";
+        $("#cat").value = "";
+        $("#min").value = "";
+        $("#max").value = "";
+        $("#sort").value = "latest";
+        applyFilters();
+      }
+
+      function loadMore() {
+        PAGE++;
+        renderProducts(LATEST_RESULTS, true);
+      }
+
+      function applyGlobalSearch() {
+        const v = $("#globalSearch").value.trim();
+        $("#q").value = v;
+        applyFilters();
+      }
+
+      // ----------------- Actions -----------------
+      function openProduct(id) {
+        const p = PRODUCTS.find((x) => x.id === id);
+        const v = VENDORS.find((x) => x.id === p.vendorId);
+        $("#pmTitle").textContent = p.title;
+        $("#pmImg").src = p.img;
+        $("#pmDesc").textContent = p.desc;
+        $("#pmCategory").textContent = p.cat;
+        $("#pmRating").innerHTML = stars(p.rating);
+        $("#pmPrice").textContent = fmtUSD(p.price);
+        $("#pmVendor").textContent = `អ្នកផលិត: ${v?.name ?? "-"} (${
+          v?.loc ?? "-"
+        })`;
+        $("#pmContact").href =
+          "https://t.me/share/url?url=" +
+          encodeURIComponent(location.href) +
+          "&text=" +
+          encodeURIComponent(p.title + " — " + fmtUSD(p.price));
+        new bootstrap.Modal("#productModal").show();
+      }
+
+      function openVendorModal() {
+        alert("Demo: សម្រាប់វគ្គ Production អាចបើក Form បញ្ចូលផលិតផល / Auth");
+      }
+
+      function addCalendar(title, date, place) {
+        // Minimal ICS generator
+        const dt = new Date(date);
+        const pad = (n) => String(n).padStart(2, "0");
+        const toUTC = (d) =>
+          `${d.getUTCFullYear()}${pad(d.getUTCMonth() + 1)}${pad(
+            d.getUTCDate()
+          )}T${pad(d.getUTCHours())}${pad(d.getUTCMinutes())}00Z`;
+        const dtStart = toUTC(new Date(dt.setHours(2, 0, 0, 0)));
+        const dtEnd = toUTC(new Date(dt.setHours(6, 0, 0, 0)));
+        const ics = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//KPC//Calendar//EN
+BEGIN:VEVENT
+UID:${Date.now()}@kpc
+DTSTAMP:${toUTC(new Date())}
+DTSTART:${dtStart}
+DTEND:${dtEnd}
+SUMMARY:${title}
+LOCATION:${place}
+END:VEVENT
+END:VCALENDAR`;
+        const blob = new Blob([ics], { type: "text/calendar" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `${title.replace(/\s+/g, "_")}.ics`;
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+
+      function subscribe() {
+        const el = $("#newsletterEmail");
+        if (!/^\S+@\S+\.\S+$/.test(el.value)) {
+          $("#subMsg").textContent = "សូមបញ្ចូលអ៊ីមែលត្រឹមត្រូវ";
+          return;
+        }
+        $("#subMsg").textContent = "បានចុះឈ្មោះរួច! (Demo)";
+        el.value = "";
+      }
+
+      // Contact fake submit
+      $("#contactForm")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        $("#contactMsg").textContent = "សារ​របស់អ្នកត្រូវបានបញ្ជូន (Demo)";
+        setTimeout(() => ($("#contactMsg").textContent = ""), 3000);
+        e.target.reset();
+      });
+
+      // Theme toggle
+      const setTheme = (m) => {
+        document.documentElement.setAttribute("data-theme", m);
+        localStorage.setItem("kpc-theme", m);
+        $("#themeToggle span").textContent = m === "dark" ? "Light" : "Dark";
+      };
+      (function initTheme() {
+        setTheme(localStorage.getItem("kpc-theme") || "light");
+      })();
+      $("#themeToggle").addEventListener("click", () => {
+        const now =
+          document.documentElement.getAttribute("data-theme") === "dark"
+            ? "light"
+            : "dark";
+        setTheme(now);
+      });
+      $("#themeToggleMobile").addEventListener("click", () => {
+        const now =
+          document.documentElement.getAttribute("data-theme") === "dark"
+            ? "light"
+            : "dark";
+        setTheme(now);
+      });
+
+      // Back to top visibility
+      const topBtn = $("#backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 600) topBtn.classList.add("show");
+        else topBtn.classList.remove("show");
+      });
+
+      // Init
+      (function init() {
+        renderVendors();
+        renderEvents();
+        renderNews();
+        renderTestimonials();
+        LATEST_RESULTS = PRODUCTS.slice().sort(
+          (a, b) => new Date(b.date) - new Date(a.date)
+        );
+        renderProducts(LATEST_RESULTS, false);
+      })();
+    </script>
+  </body>
+</html>

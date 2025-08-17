@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="km">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KPC — Khmer Products Community</title>
+  <meta name="description" content="សហគមន៍ផលិតផលខ្មែរ (KPC): វេទិកាបង្ហាញ និងផ្សព្វផ្សាយផលិតផលធ្វើនៅកម្ពុជា" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="KPC — Khmer Products Community" />
+  <meta property="og:description" content="វេទិកាបង្ហាញផលិតផលស្រុកខ្មែរ ឧបត្ថម្ភអ្នកផលិតក្នុងស្រុក" />
+  <meta property="og:type" content="website" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --kpc-primary:#7c3aed; /* purple */
+      --kpc-dark:#1f2937;
+      --kpc-light:#f8fafc;
+    }
+    body{font-family: system-ui,-apple-system, Segoe UI, Roboto, Noto Sans Khmer, Arial, sans-serif;}
+    .navbar-brand{letter-spacing:.5px}
+    .btn-kpc{background:var(--kpc-primary); color:#fff}
+    .btn-kpc:hover{background:#6d28d9; color:#fff}
+    .hero{background: linear-gradient(180deg, #faf7ff 0%, #ffffff 100%);}    
+    .shadow-soft{box-shadow:0 10px 25px rgba(0,0,0,.07)}
+    .badge-soft{background:#eef2ff; color:#4f46e5}
+    .section-heading small{letter-spacing:.08em; color:#6b7280}
+    .category-chip{border:1px solid #e5e7eb; padding:.35rem .75rem; border-radius:999px; background:#fff}
+    .category-chip.active{border-color:#a78bfa; background:#f5f3ff; color:#4c1d95}
+    .kpc-footer{background: var(--kpc-dark); color:#cbd5e1}
+    .kpc-footer a{color:#e9d5ff; text-decoration:none}
+    .kpc-footer a:hover{color:#fff}
+    .rounded-4{border-radius:1rem}
+    .rounded-3{border-radius:.75rem}
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">KPC</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="#">ទំព័រដើម</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">ផលិតផល</a></li>
+          <li class="nav-item"><a class="nav-link" href="#vendors">អ្នកផលិត</a></li>
+          <li class="nav-item"><a class="nav-link" href="#events">ព្រឹត្តិការណ៍</a></li>
+          <li class="nav-item"><a class="btn btn-sm btn-kpc ms-lg-2" href="#join">ចូលរួមជាមួយយើង</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero py-5 py-lg-6">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="badge badge-soft mb-3">Khmer Products Community</span>
+          <h1 class="display-5 fw-bold mb-3">លើកស្ទួយ <span class="text-primary">ផលិតផលខ្មែរ</span> និងតភ្ជាប់សហគមន៍អ្នកផលិត</h1>
+          <p class="lead text-secondary">វេទិកាសម្រាប់បង្ហាញ និងផ្សព្វផ្សាយផលិតផលដែលផលិតនៅកម្ពុជា—ធ្វើឲ្យសហគមន៍ និងអ្នកទិញជួបជុំគ្នា។</p>
+          <div class="input-group mt-3 shadow-soft rounded-3">
+            <input type="text" class="form-control" placeholder="ស្វែងរកផលិតផល…" aria-label="ស្វែងរក">
+            <button class="btn btn-kpc" type="button"><i class="bi bi-search me-1"></i> ស្វែងរក</button>
+          </div>
+          <div class="d-flex gap-2 mt-3 flex-wrap">
+            <span class="category-chip active">ទាំងអស់</span>
+            <span class="category-chip">Handicraft</span>
+            <span class="category-chip">Food</span>
+            <span class="category-chip">Textile</span>
+            <span class="category-chip">Organic</span>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid rounded-4 shadow-soft" src="https://picsum.photos/960/600?random=3" alt="KPC Hero" />
+        </div>
+      </div>
+
+      <div class="row text-center mt-5 g-3">
+        <div class="col-6 col-lg-3">
+          <div class="p-4 border rounded-4 h-100">
+            <i class="bi bi-shop fs-2 text-primary"></i>
+            <h6 class="mt-2 mb-1">អ្នកផលិតក្នុងស្រុក</h6>
+            <small class="text-muted">សហការជាមួយសហគមន៍</small>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="p-4 border rounded-4 h-100">
+            <i class="bi bi-award fs-2 text-primary"></i>
+            <h6 class="mt-2 mb-1">គុណភាព និងវិញ្ញាបនបត្រ</h6>
+            <small class="text-muted">GI, Organic, Hand‑woven</small>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="p-4 border rounded-4 h-100">
+            <i class="bi bi-geo-alt fs-2 text-primary"></i>
+            <h6 class="mt-2 mb-1">កំណើតតំបន់</h6>
+            <small class="text-muted">បង្ហាញតាមខេត្ត/ទីតាំង</small>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="p-4 border rounded-4 h-100">
+            <i class="bi bi-heart fs-2 text-primary"></i>
+            <h6 class="mt-2 mb-1">គាំទ្រវប្បធម៌</h6>
+            <small class="text-muted">រួមចំណែករក្សាអត្តសញ្ញាណ</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRODUCTS PREVIEW -->
+  <section id="products" class="py-5">
+    <div class="container">
+      <div class="section-heading text-center mb-4">
+        <small>Products</small>
+        <h2 class="fw-bold">ផលិតផលពិសេស</h2>
+        <p class="text-secondary">សូមមើលជម្រើសខ្លះៗពីសហគមន៍ KPC</p>
+      </div>
+
+      <div class="row g-3">
+        <!-- Card 1 -->
+        <div class="col-6 col-lg-3">
+          <div class="card h-100 shadow-soft border-0">
+            <img src="https://picsum.photos/600/400?random=11" class="card-img-top rounded-top-4" alt="Product" />
+            <div class="card-body">
+              <span class="badge badge-soft mb-2">Textile</span>
+              <h6 class="card-title mb-1">Khmer Silk Scarf</h6>
+              <small class="text-muted">Siem Reap Weavers</small>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-6 col-lg-3">
+          <div class="card h-100 shadow-soft border-0">
+            <img src="https://picsum.photos/600/400?random=12" class="card-img-top rounded-top-4" alt="Product" />
+            <div class="card-body">
+              <span class="badge badge-soft mb-2">Food</span>
+              <h6 class="card-title mb-1">Kampot Pepper</h6>
+              <small class="text-muted">Green Farm</small>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-6 col-lg-3">
+          <div class="card h-100 shadow-soft border-0">
+            <img src="https://picsum.photos/600/400?random=13" class="card-img-top rounded-top-4" alt="Product" />
+            <div class="card-body">
+              <span class="badge badge-soft mb-2">Handicraft</span>
+              <h6 class="card-title mb-1">Wood Carving</h6>
+              <small class="text-muted">Artisans Khmer</small>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-6 col-lg-3">
+          <div class="card h-100 shadow-soft border-0">
+            <img src="https://picsum.photos/600/400?random=14" class="card-img-top rounded-top-4" alt="Product" />
+            <div class="card-body">
+              <span class="badge badge-soft mb-2">Organic</span>
+              <h6 class="card-title mb-1">Palm Sugar</h6>
+              <small class="text-muted">Community Coop</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a class="btn btn-outline-dark" href="#">មើលផលិតផលទាំងអស់</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENDOR SPOTLIGHT -->
+  <section id="vendors" class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <img class="img-fluid rounded-4 shadow-soft" src="https://picsum.photos/900/560?random=21" alt="Vendor" />
+        </div>
+        <div class="col-lg-6">
+          <small class="text-uppercase text-secondary">Community Spotlight</small>
+          <h3 class="fw-bold mt-1">ជួបជាមួយអ្នកផលិតក្នុងស្រុក</h3>
+          <p class="text-secondary">យើងកំពុងលើកស្ទួយអ្នកផលិតខ្មែរដែលរក្សាប្រពៃណី និងច្នៃប្រឌិតផលិតផលថ្មីៗ។ ស្វែងយល់ពីរឿងរ៉ាវ និងដំណើររបស់ពួកគេ។</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-kpc" href="#">មើល Profile អ្នកផលិត</a>
+            <a class="btn btn-outline-dark" href="#">ទាក់ទង</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS PREVIEW -->
+  <section id="events" class="py-5">
+    <div class="container">
+      <div class="section-heading text-center mb-4">
+        <small>Events</small>
+        <h2 class="fw-bold">ព្រឹត្តិការណ៍ជិតមកដល់</h2>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="p-4 border rounded-4 h-100">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <i class="bi bi-calendar-event"></i>
+              <strong>Community Fair — Phnom Penh</strong>
+            </div>
+            <small class="text-muted">15 Sep 2025 • Exhibition</small>
+            <p class="mt-2 mb-0">បង្ហាញផលិតផលសហគមន៍ និងសិក្ខាសាលាតូចៗស្តីពីសិប្បកម្ម។</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded-4 h-100">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <i class="bi bi-calendar-event"></i>
+              <strong>Craft Workshop — Siem Reap</strong>
+            </div>
+            <small class="text-muted">28 Sep 2025 • Workshop</small>
+            <p class="mt-2 mb-0">រៀនចាក់ច្រវ៉ាក់ខ្សែសូត្រដោយដៃ ពីគ្រូជំនាញក្នុងស្រុក។</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded-4 h-100">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <i class="bi bi-calendar-event"></i>
+              <strong>Organic Market — Kampot</strong>
+            </div>
+            <small class="text-muted">12 Oct 2025 • Market</small>
+            <p class="mt-2 mb-0">ជួបជុំអ្នកផលិតអុករ៉ាណិក និងរស់រានមានសុខភាពល្អ។</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a class="btn btn-outline-dark" href="#">មើលព្រឹត្តិការណ៍ទាំងអស់</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER / JOIN -->
+  <section id="join" class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <h3 class="fw-bold">ចូលរួមជាមួយសហគមន៍ KPC</h3>
+          <p class="text-secondary">ទទួលព័ត៌មានថ្មីៗ ព្រឹត្តិការណ៍ និងការអំពាវនាវអ្នកផលិត ដោយបញ្ចូលអ៊ីមែលរបស់អ្នក។</p>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="អ៊ីមែលរបស់អ្នក" aria-label="Email">
+            <button class="btn btn-kpc" type="button">ចុះឈ្មោះ</button>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="p-4 border rounded-4 h-100">
+            <h6 class="mb-2"><i class="bi bi-shield-check me-1"></i> សុវត្ថិភាព & ភាពឯកជន</h6>
+            <small class="text-muted">យើងគោរពការពារ​ទិន្នន័យអ្នកប្រើ និងមិនបញ្ជូនសាររំខានឡើយ។ អ្នកអាចលុបឈ្មោះបានគ្រប់ពេល។</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="kpc-footer py-4">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-6">
+          <strong>KPC — Khmer Products Community</strong>
+          <div><small>© 2025 KPC. រក្សាសិទ្ធិគ្រប់យ៉ាង។</small></div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a class="me-3" href="#">អំពីយើង</a>
+          <a class="me-3" href="#">គោលការណ៍ឯកជនភាព</a>
+          <a href="#">ទំនាក់ទំនង</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
