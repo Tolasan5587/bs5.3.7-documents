@@ -4,6 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
+    <style>
+      form .form-label {
+        font-weight: 600;
+      }
+      form .form-label::after {
+        content: ":";
+      }
+    </style>
   </head>
   <body>
     <section class="py-5">
@@ -31,6 +39,61 @@
                   id=""
                   aria-describedby="emailHelp"
                 />
+
+                <!-- checked -->
+                <div class="mb-3 d-flex ">
+                     <div class="form-check ">
+                  <input
+                    class="form-check-input "
+                    type="radio"
+                    name="radioDefault"
+                    id="radioDefault1"
+                  />
+                  <label class="form-check-label" for="radioDefault1">
+                    Gender
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input form-check-inline"
+                    type="radio"
+                    name="radioDefault"
+                    id="radioDefault2"
+                    checked
+                  />
+                  <label class="form-check-label " for="radioDefault2"> Male</label>
+                </div>
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Language</label>
+                   <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1">
+                      English
+                   </div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1">
+                      Khmer
+                   </div>
+                   <!-- mb-3 -->
+                    <div class="mb-3">
+                        <div class="mb-3">
+                            <label for="" class="form-label"></label>
+                            <textarea class="form-control" name="" id="" rows="3"></textarea>
+                        </div>
+                        
+                    </div>
+                </div>
               </div>
             </div>
           </div>
